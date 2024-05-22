@@ -384,7 +384,7 @@ def check_all_models():
     # print("Currently, this function always returns True")
     print("Checking All Models")
     model = {}
-    check = 0
+    check = 1
     for i in range(2):
         for j in range(2):
             for k in range(2):
@@ -397,6 +397,20 @@ def check_all_models():
                 if kb_eval and not infer_eval:
                     print("KB does not entail INFER")
                     print("===============")
+                    print("Counter example of when it does entail:")
+                    check=1
+                    while(check):
+                        for id in identifiers:
+                            model[id] = random.choice([True, False])
+                        kb_ran = evaluate_expression_set(kb, model)
+                        infer_ran = evaluate_expression_set(infer, model)
+                        
+                        if kb_ran and not infer_ran:
+                            continue
+                        else:
+                            print(model)
+                            check=0
+
                     return False
 
     print("KB entails INFER")
