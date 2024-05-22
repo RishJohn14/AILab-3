@@ -359,17 +359,18 @@ def evaluate_random_model():
         model[id] = random.choice([True, False])
 
     print("Randomly chosen model: ", model)
-
     kb_eval = evaluate_expression_set(kb, model)
     infer_eval = evaluate_expression_set(infer, model)
 
-    print("     KB evaluates to: ", kb_eval)
-    print("     INFER evaluates to: ", infer_eval, "\n")
+    print("For a random model, KB evaluates to: ", kb_eval)
+    print("For a random model, INFER evaluates to: ", infer_eval, "\n")
 
     if kb_eval and not infer_eval:
-        print("KB does not entail INFER\n")
+        print("KB does not entail INFER")
     else:
-        print("KB entails INFER\n")
+        print("KB entails INFER")
+    
+    print("===============\n")
 
 
 ##
@@ -378,11 +379,29 @@ def evaluate_random_model():
 
 def check_all_models():
     # This function should return True if KB entails INFER, otherwise it should return False
-    print("The function check_all_models is not implemented yet")
-    print("The goal of this pdf is to implement this yourself")
-    print("Currently, this function always returns True")
+    # print("The function check_all_models is not implemented yet")
+    # print("The goal of this pdf is to implement this yourself")
+    # print("Currently, this function always returns True")
+    print("Checking All Models")
+    model = {}
+    check = 0
+    for i in range(2):
+        for j in range(2):
+            for k in range(2):
+                model['p'] = True if i==1 else False
+                model['q'] = True if j==1 else False
+                model['r'] = True if k==1 else False
+                kb_eval = evaluate_expression_set(kb, model)
+                infer_eval = evaluate_expression_set(infer, model)
 
-    return True
+                if kb_eval and not infer_eval:
+                    print("KB does not entail INFER")
+                    print("===============")
+                    return False
+
+    print("KB entails INFER")
+    print("===============")
+    return True       
 
 
 def main():
