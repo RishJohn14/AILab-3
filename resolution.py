@@ -277,7 +277,27 @@ def init():
 ##
 
 def recursive_print_proof(idx, clause_set):
-    print("Implement the function recursive_print_proof() yourself!")
+    def recursive_print_proof(idx, clause_set):
+    #print_clause_set(clause_set)
+    not_found = True
+    for i in range(idx-1):
+        for j in range(i+1, idx):
+            new = True
+            while new and not_found:
+                new = False
+                if can_resolve(clause_set[i], clause_set[j]):
+                    x = resolve_clauses(clause_set[i], clause_set[j])
+                    if clause_set[idx].equals(x):
+                        not_found = False
+                        recursive_print_proof(j,clause_set)
+                        clause_set[idx].print_clause()
+                        print(" is inferred from", end=" ")
+                        clause_set[i].print_clause()
+                        print(" and", end=" ")
+                        clause_set[j].print_clause()
+                        print(".")
+
+
 
 
 def print_proof(clause_set):
