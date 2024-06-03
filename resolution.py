@@ -271,6 +271,16 @@ def init():
 
     return kb
 
+    #Below are the constraints that satisfy the question
+
+    #kb.append(Clause("a,~b"))
+    #kb.append(Clause("a,b,~c,~d"))
+    #kb.append(Clause("b,c,e"))
+    #kb.append(Clause("~a"))
+    #kb.append(Clause("~e"))
+    #kb.append(Clause("e,d"))
+
+
 
 ##
 # It should not be necessary to change any code above this line!
