@@ -22,6 +22,8 @@ times(X,s(Y),Z) :- times(X,Y,Z1), plus(X,Z1,Z).
 
 pow(X,0,s(0)) :- isnumber(X).
 pow(X,s(Y),Z) :- pow(X,Y,Z1), times(X,Z1,Z).
+
+
 % member(X, L) is true if X is a member of list L
 member(X, [X|_]). 
 
