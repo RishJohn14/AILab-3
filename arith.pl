@@ -22,6 +22,22 @@ times(X,s(Y),Z) :- times(X,Y,Z1), plus(X,Z1,Z).
 
 pow(X,0,s(0)) :- isnumber(X).
 pow(X,s(Y),Z) :- pow(X,Y,Z1), times(X,Z1,Z).
+% member(X, L) is true if X is a member of list L
+member(X, [X|_]). 
+
+member(X, [_|T]) :- member(X, T).
+
+% concat(L, X, Y) is true if L is the concatenation of lists X and Y
+concat([], X, X).
+concat([H|T], X, [H|Result]) :- concat(T, X, Result).
+
+% reverse(L, R) is true if R is the reversal of the list L
+reverse([], []).
+reverse([H|T], R) :- reverse(T, RevT), concat(RevT, [H], R).
+
+% palindrome(L) is true if L is a palindrome
+palindrome(L) :- reverse(L, L).
+
 
 % member(X, L) is true if X is a member of list L
 member(X, [X|_]). 
