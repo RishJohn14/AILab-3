@@ -18,6 +18,28 @@ minus(s(X),s(Y),Z) :- minus(X,Y,Z).
 times(X,0,0) :- isnumber(X).
 times(X,s(Y),Z) :- times(X,Y,Z1), plus(X,Z1,Z).
 
+% even(N) is true if N is 0 or even
+
+even(0).
+even(s(s(X))) :- even(X).	
+
+
+% N is odd if it differs by 1 with an even number
+
+odd(s(X)) :- even(X).
+
+
+% div2(N, D) is true if integer division N / 2 = D.
+
+div2(0, 0).
+div2(s(0), 0).
+div2(s(s(N)), s(D)) :- div2(N, D).
+
+
+% log is true if B^N == X
+log(X, B, N) :- pow(B, N, X).
+
+
 % pow(X,Y,Z) is true if X^Y = Z
 
 pow(X,0,s(0)) :- isnumber(X).
