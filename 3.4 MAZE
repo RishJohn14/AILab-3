@@ -7,25 +7,58 @@ connected(o, p).
 connected(p, o).
 
 %second row 
-connected(i,j)
-connected(j,i)
-connected(j,k)
-connected(k,j)
-connected(k,l)
-connected(l,k)
+connected(i,j).
+connected(j,i).
+connected(j,k).
+connected(k,j).
+connected(k,l).
+connected(l,k).
 
 %third row
-connected(e,f)
-connected(f,e)
-connected(f,g)
-connected(g,f)
-connected(g,h)
-connected(h,g)
+connected(e,f).
+connected(f,e).
+connected(f,g).
+connected(g,f).
+connected(g,h).
+connected(h,g).
 
 % fourth row
-connected(a,b)
-connected(b,a)
-connected(b,c)
-connected(c,b)
-connected(c,d)
-connected(d,c)
+connected(a,b).
+connected(b,a).
+connected(b,c).
+connected(c,b).
+connected(c,d).
+connected(d,c).
+
+% 1st column connections
+connected(a,e).
+connected(e,a).
+connected(e,i).
+connected(i,e).
+connected(i,m).
+connected(m,i).
+
+%2nd column
+connected(b,f).
+connected(f,b).
+connected(f,j).
+connected(j,f).
+connected(j,n).
+connected(n,j).
+
+%3rd column
+connected(c,g).
+connected(g,c).
+connected(g,k).
+connected(k,g).
+connected(k,o).
+connected(o,k).
+
+%4th column
+connected(d,h).
+connected(h,d).
+connected(h,l).
+connected(l,h).
+connected(l,p).
+connected(p,l).
+
