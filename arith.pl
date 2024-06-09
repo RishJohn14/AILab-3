@@ -39,6 +39,11 @@ div2(s(s(N)), s(D)) :- div2(N, D).
 % log is true if B^N == X
 log(X, B, N) :- pow(B, N, X).
 
+%
+fib(0, 0).
+fib(1, s(0)).
+fib(s(s(X)), Y)  :- fib(s(X), F1), fib(X, F2), plus(F1, F2, Y).
+
 
 % pow(X,Y,Z) is true if X^Y = Z
 
