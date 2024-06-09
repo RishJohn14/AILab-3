@@ -1,1 +1,25 @@
+% first row
+connected(m, n).
+connected(n, m).
+connected(n, o).
+connected(o, n).
+connected(o, p).
+connected(p, o).
 
+%second row 
+connected(i,j)
+connected(j,i)
+connected(j,k)
+connected(k,j)
+connected(k,l)
+connected(l,k)
+
+%third row
+connected(e,f)
+connected(f,e)
+connected(f,g)
+connected(g,f)
+connected(g,h)
+connected(h,g)
+
+%
