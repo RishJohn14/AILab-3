@@ -22,4 +22,10 @@ connected(g,f)
 connected(g,h)
 connected(h,g)
 
-%
+% fourth row
+connected(a,b)
+connected(b,a)
+connected(b,c)
+connected(c,b)
+connected(c,d)
+connected(d,c)
